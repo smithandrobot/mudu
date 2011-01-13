@@ -5,11 +5,13 @@ import mudu.Player
 
 class PlayerRestController extends RestController {
 
+  def playerService
+
   def index = {
     def player_list = Player.list()
     def players = []
 
-    player_list.each {p -> players.push(createPlayerResponseObject(p))}
+    player_list.each {p -> players.push(playerService.createPlayerResponseObject(p))}
 
     render success(players)
   }
@@ -21,27 +23,17 @@ class PlayerRestController extends RestController {
       render error("Player not found with the Facebook ID: " + params.id)
       return
     } else {
-      render success(createPlayerResponseObject(p))
+      render success(playerService.createPlayerResponseObject(p))
       return
 
     }
 
   }
 
-  def createPlayerResponseObject(Player p) {
-    def achievements = []
-    p.achievements.each {a ->
-      def achievement = [
-              dateEarned: a.dateEarned,
-              id: a.achievement.id
-      ]
-      achievements.push(achievement)
-    }
-    def player = [
-            facebookId: p.facebookId,
-            achievements: achievements
-    ]
-
-    return player
+  def create = {
+    def p = playerService.getOrCreatePlayer(params)
+    render success(playerService.createPlayerResponseObject(p))
   }
+
+
 }

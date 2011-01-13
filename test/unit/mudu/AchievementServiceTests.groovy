@@ -1,8 +1,8 @@
-package mudu.api
+package mudu
 
 import grails.test.*
 
-class PlayerRestControllerTests extends ControllerUnitTestCase {
+class AchievementServiceTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }
@@ -12,5 +12,6 @@ class PlayerRestControllerTests extends ControllerUnitTestCase {
     }
 
     void testSomething() {
+
     }
 }

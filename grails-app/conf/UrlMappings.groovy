@@ -11,6 +11,10 @@ class UrlMappings {
       controller = "achievementRest"
     }
 
+    "/api/interactions/$action?/$id?" {
+      controller = "interactionRest"
+    }
+
     "/api/" {
       controller = "rest"
     }
@@ -24,6 +28,13 @@ class UrlMappings {
     }
 
     "/admin/$controller/$action?/$id?" {
+      constraints {
+        // apply constraints here
+      }
+    }
+
+    "/admin/" {
+      controller = "admin"
       constraints {
         // apply constraints here
       }

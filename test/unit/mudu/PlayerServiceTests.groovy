@@ -1,8 +1,8 @@
-package mudu.admin
+package mudu
 
 import grails.test.*
 
-class AchievementAdminControllerTests extends ControllerUnitTestCase {
+class PlayerServiceTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

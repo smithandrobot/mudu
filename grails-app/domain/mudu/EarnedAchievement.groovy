@@ -2,7 +2,7 @@ package mudu
 
 class EarnedAchievement {
 
-  Date dateEarned
+  Date dateEarned = new Date()
   static constraints = {
   }
 

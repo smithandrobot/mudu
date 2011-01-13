@@ -1,8 +1,8 @@
-package mudu.api
+package mudu
 
 import grails.test.*
 
-class InteractionEventRestControllerTests extends ControllerUnitTestCase {
+class InteractionServiceTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }
