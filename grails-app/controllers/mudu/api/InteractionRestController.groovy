@@ -13,7 +13,7 @@ class InteractionRestController extends RestController {
 
   def create = {
     try{
-      interactionService.createInteractionEvent(Integer.parseInt(params.eventId), params.facebookId, params.eventValue)
+      interactionService.createInteractionEvent(params.interactionId, params.facebookId, params.interactionValue)
       render success("Event recorded")
     } catch(Error e) {
       render error(e.message)

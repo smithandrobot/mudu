@@ -3,6 +3,7 @@ package mudu
 class Player {
 
   String facebookId
+  String facebookToken
   String name
   String gender
   Date birthdate

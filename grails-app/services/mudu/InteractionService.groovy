@@ -4,19 +4,40 @@ class InteractionService {
 
   static transactional = true
 
-  def createInteractionEvent(Integer eventId, String playerFacebookId, String value) {
+  def createInteractionEvent(String interactionId, String playerFacebookId, String value) {
+
+    if (interactionId == null) {
+      throw new Error("Params missing: interactionId")
+    } else if(playerFacebookId == null){
+      throw new Error("Params missing: facebookId")
+    }
 
     def player = Player.findByFacebookId(playerFacebookId)
+
     if (player == null) {
       throw new Error("Player with facebook Id $playerFacebookId does not exist")
     }
 
-    def interaction = Interaction.get(eventId)
-    if (interaction == null) {
-      throw new Error("Interaction with event Id $eventId does not exist")
+    try {
+      interactionId = Integer.parseInt(interactionId)
+    } catch(NumberFormatException e){
+      throw new Error("invalid interactionId: " + e.message)
     }
 
-    return new InteractionEvent(player:player, interaction:interaction, value:value).save()
+    def interaction = Interaction.get(interactionId)
+    if (interaction == null) {
+      throw new Error("Interaction with event Id $interactionId does not exist")
+    }
+
+    def interactions = []
+
+    value = value ?: ""
+    def values = value.split(",")
+    values.each { v ->
+      interactions.push(new InteractionEvent(player: player, interaction: interaction, value: v).save())
+    }
+
+    return interactions
 
   }
 
@@ -33,7 +54,7 @@ class InteractionService {
               id: i.id,
               name: i.name,
               description: i.description,
-              score:i.score,
+              score: i.score,
               timesTriggered: InteractionEvent.countByInteraction(i)
       ])
 

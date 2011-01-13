@@ -31,6 +31,7 @@ class PlayerService {
               name: params.name,
               gender: params.gender,
               location: params.location,
+              facebookToken: params.token,
               birthdate: this.parseDate(params.birthdate)).save(failOnError: true)
     return player
   }
