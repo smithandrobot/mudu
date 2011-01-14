@@ -10,4 +10,8 @@ class InteractionEvent {
 
     static belongsTo = [player: Player, interaction: Interaction]
 
+  public String toString() {
+    return interaction.name
+  }
+
 }
