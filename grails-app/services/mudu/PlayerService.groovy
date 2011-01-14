@@ -26,19 +26,40 @@ class PlayerService {
   }
 
   public Player getOrCreatePlayer(params) {
+
+    params = validateParams(params)
+
     def player = Player.findByFacebookId(params.id) ?:
       new Player(facebookId: params.id,
-              name: params.name,
-              gender: params.gender,
-              location: params.location,
-              facebookToken: params.token,
-              birthdate: this.parseDate(params.birthdate)).save(failOnError: true)
+              name          : params.name,
+              gender        : params.gender,
+              location      : params.location,
+              facebookToken : params.token,
+              birthdate     : params.birthdate).save(failOnError: true)
+
     return player
   }
 
   public Date parseDate(String dateString) {
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
     return df.parse(dateString);
+  }
+
+  public Object validateParams(Object params){
+
+    if(params.id == null){
+      throw new Error("Missing parameter: facebookId")
+    } else if(params.token == null){
+      throw new Error("Missing parameter: token")
+    }
+
+    try{
+      params.birthdate = parseDate(params.birthdate)
+    } catch(java.text.ParseException e){
+      params.birthdate = null
+    }
+
+    return params
   }
 
 }

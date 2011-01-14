@@ -10,8 +10,18 @@
 
     <name>Mud-U</name>
     <description>Mud U Facebook Application API</description>
-    <url>http://www.smithandrobot.com</url>
-
+    <url>http://muduapp.srsc.us</url>
+    <scm>
+        <connection>
+            scm:git:ssh://github.com/smithandrobot/mudu.git
+        </connection>
+        <developerConnection>
+            scm:git:ssh://git@github.com/smithandrobot/mudu.git
+        </developerConnection>
+        <url>
+            http://github.com/smithandrobot/mudu
+        </url>
+    </scm>
     <properties>
         <grails.version>1.3.6</grails.version>
     </properties>
@@ -275,6 +285,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <site>
+            <id>mudu</id>
+            <name>Production Server</name>
+            <url>scp://muduapp.srsc.us/root</url>
+        </site>
+    </distributionManagement>
+
     <repositories>
         <!-- Required to get hold of javassist:javassist -->
         <repository>
@@ -316,7 +334,18 @@
                     <target>1.5</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+            </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>1.0-alpha-5</version>
+            </extension>
+        </extensions>
     </build>
 
     <profiles>

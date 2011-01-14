@@ -12,6 +12,8 @@ class Player {
     name(nullable: true)
     birthdate(nullable:true)
     gender(nullable:true)
+    facebookId(unique:true)
+    facebookToken(unique:true)
   }
 
   static hasMany = [achievements: EarnedAchievement, interactions: InteractionEvent]

@@ -1,6 +1,5 @@
 package mudu.api
 
-import grails.converters.JSON
 import mudu.Player
 
 class PlayerRestController extends RestController {
@@ -31,8 +30,13 @@ class PlayerRestController extends RestController {
   }
 
   def create = {
-    def p = playerService.getOrCreatePlayer(params)
-    render success(playerService.createPlayerResponseObject(p))
+    try {
+      def p = playerService.getOrCreatePlayer(params)
+      render success(playerService.createPlayerResponseObject(p))
+    } catch (Error e) {
+      render error(e.message)
+    }
+
   }
 
 
