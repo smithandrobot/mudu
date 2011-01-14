@@ -57,6 +57,8 @@ class PlayerService {
       params.birthdate = parseDate(params.birthdate)
     } catch(java.text.ParseException e){
       params.birthdate = null
+    } catch(java.lang.NullPointerException e){
+      params.birthdate = null
     }
 
     return params

@@ -48,4 +48,22 @@ class PlayerRestControllerTests extends GroovyTestCase {
     assertEquals resp.stat, "ok"
     assertEquals new Date(76, 6, 28), Player.findByFacebookId(prc.params.id).birthdate
   }
+
+  void testDuplicateCreation() {
+    prc.create()
+    def resp = JSON.parse(prc.response.contentAsString)
+    assertEquals resp.stat, "ok"
+    prc.create()
+    assertEquals 1, Player.countByFacebookId(prc.params.id)
+  }
+
+  void testGenderAndLocation(){
+    prc.params.location = "Austin, TX"
+    prc.params.gender = "male"
+    prc.create()
+    def resp = JSON.parse(prc.response.contentAsString)
+    assertEquals resp.stat, "ok"
+    assertEquals "male", Player.findByFacebookId(prc.params.id).gender
+    assertEquals "Austin, TX", Player.findByFacebookId(prc.params.id).location
+  }
 }

@@ -79,4 +79,6 @@ class InteractionRestControllerTests extends GroovyTestCase {
     def resp = JSON.parse(irc.response.contentAsString)
     assertEquals resp.stat, "fail"
   }
+
+
 }
