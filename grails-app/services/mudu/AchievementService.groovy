@@ -25,21 +25,21 @@ class AchievementService {
     return achievements
   }
 
-  public EarnedAchievement awardAchievement(String playerFacebookId, String achievementId) {
+  public EarnedAchievement awardAchievement(String playerFacebookId, String achievementName) {
 
-    if (playerFacebookId == null || achievementId == null) {
-      throw new Error("Params missing: facebook id: $playerFacebookId achievement id: $achievementId.")
+    if (playerFacebookId == null || achievementName == null) {
+      throw new Error("Params missing: facebook id: $playerFacebookId achievement name: $achievementName.")
     }
 
     def player = Player.findByFacebookId(playerFacebookId)
-    def achievement = Achievement.get(Integer.parseInt(achievementId))
+    def achievement = Achievement.findByName(achievementName)
 
     if (player == null) {
       throw new Error("Player with the facebook id ${playerFacebookId} does not exist.")
     }
 
     if (achievement == null) {
-      throw new Error("Achievement $achievementId not found.")
+      throw new Error("Achievement $achievementName not found.")
     }
 
     def existing = EarnedAchievement.findByPlayerAndAchievement(player, achievement)
@@ -53,5 +53,18 @@ class AchievementService {
       ea.save()
       return ea
     }
+  }
+
+  public void checkIfAchievableEvent(Player player, Interaction interaction) {
+
+    if (interaction.name == "Invite"){
+      try{
+           this.awardAchievement(player.facebookId, "Invite")
+      } catch(Error e){
+        //do nothing
+      }
+
+    }
+
   }
 }

@@ -2,9 +2,12 @@ package mudu
 
 class InteractionService {
 
+  def achievementService
   static transactional = true
 
   def createInteractionEvent(String interactionId, String playerFacebookId, String value) {
+
+
 
     if (interactionId == null) {
       throw new Error("Params missing: interactionId")
@@ -29,12 +32,15 @@ class InteractionService {
       throw new Error("Interaction with event Id $interactionId does not exist")
     }
 
+    achievementService.checkIfAchievableEvent(player, interaction)
+
     def interactions = []
 
     value = value ?: ""
     def values = value.split(",")
     values.each { v ->
-      interactions.push(new InteractionEvent(player: player, interaction: interaction, value: v).save())
+      def i = new InteractionEvent(player: player, interaction: interaction, value: v).save()
+      interactions.push(i)
     }
 
     return interactions
