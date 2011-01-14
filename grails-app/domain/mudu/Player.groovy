@@ -8,6 +8,7 @@ class Player {
   String gender
   String location
   Date birthdate
+  Date dateCreated = new Date()
 
   static constraints = {
     name(nullable: true)
