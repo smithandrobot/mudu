@@ -5,6 +5,7 @@ import mudu.Player
 class PlayerRestController extends RestController {
 
   def playerService
+  def facebookService
 
   def index = {
     def player_list = Player.list()
@@ -30,8 +31,10 @@ class PlayerRestController extends RestController {
   }
 
   def create = {
+    def playerParams = facebookService.fetchFacebookData(params.token)
+    playerParams.token = params.token
     try {
-      def p = playerService.getOrCreatePlayer(params)
+      def p = playerService.getOrCreatePlayer(playerParams)
       render success(playerService.createPlayerResponseObject(p))
     } catch (Error e) {
       render error(e.message)
