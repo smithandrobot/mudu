@@ -31,10 +31,9 @@ class PlayerRestController extends RestController {
   }
 
   def create = {
-    def playerParams = facebookService.fetchFacebookData(params.token)
-    playerParams.token = params.token
+
     try {
-      def p = playerService.getOrCreatePlayer(playerParams)
+      def p = playerService.getOrCreatePlayer(params.token)
       render success(playerService.createPlayerResponseObject(p))
     } catch (Error e) {
       render error(e.message)

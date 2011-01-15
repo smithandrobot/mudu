@@ -26,28 +26,36 @@ class PlayerRestControllerTests extends GroovyTestCase {
     assertEquals "100000241798640", resp.data.facebookId
     assertEquals "Mud Uni", resp.data.name
 
-    def player = Player.findByFacebookId(resp.data.facebookId)
-    assertEquals prc.params.token, player.facebookToken
-    assertEquals new Date(77, 7, 03), player.birthdate
+
+  }
+
+  void testCreateWithBadToken() {
+    prc.params.token = "____"
+    prc.create()
+    def resp = JSON.parse(prc.response.contentAsString)
+    println resp
+    assertEquals "fail", resp.stat
   }
 
 
-
-  void voidtestDuplicateCreation() {
+  void testDuplicateCreation() {
     prc.create()
     def resp = JSON.parse(prc.response.contentAsString)
-    assertEquals resp.stat, "ok"
+    assertEquals "ok", resp.stat
     prc.create()
-    assertEquals 1, Player.countByFacebookId(prc.params.id)
+    assertEquals 1, Player.countByFacebookToken(prc.params.token)
   }
 
-  void voidtestGenderAndLocation() {
-    prc.params.location = "Austin, TX"
-    prc.params.gender = "male"
+  void testAllDataSaved() {
+
     prc.create()
     def resp = JSON.parse(prc.response.contentAsString)
+    def createdPlayer = Player.findByFacebookToken(prc.params.token)
     assertEquals resp.stat, "ok"
-    assertEquals "male", Player.findByFacebookId(prc.params.id).gender
-    assertEquals "Austin, TX", Player.findByFacebookId(prc.params.id).location
+    assertEquals "male", createdPlayer.gender
+    assertEquals "Austin, Texas", createdPlayer.location
+    assertEquals "Mud Uni", createdPlayer.name
+    assertEquals prc.params.token, createdPlayer.facebookToken
+    assertEquals new Date(77, 7, 03), createdPlayer.birthdate
   }
 }

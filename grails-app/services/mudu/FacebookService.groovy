@@ -24,7 +24,13 @@ class FacebookService {
     method.setQueryString(URIUtil.encodeQuery("fields=id,name,birthday,gender,location&access_token=$token"))
     client.executeMethod(method)
 
-    return JSON.parse(method.getResponseBodyAsString().toString())
+    def resp = JSON.parse(method.getResponseBodyAsString().toString())
+
+    if(resp.error){
+      throw new Error("Facebook error- $resp.error.message")
+    }
+
+    return  resp
   }
 
 }

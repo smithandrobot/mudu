@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat
 class PlayerService {
 
   static transactional = true
+  def facebookService
 
   def createPlayerResponseObject(Player p) {
     def achievements = []
@@ -27,12 +28,24 @@ class PlayerService {
     return player
   }
 
-  public Player getOrCreatePlayer(params) {
+  public Player getOrCreatePlayer(String facebookToken) {
+
+    if (facebookToken == null){
+      throw new Error("Missing Parameter facebookToken")
+    }
+
+    def player = Player.findByFacebookToken(facebookToken)
+
+    if (player != null){
+      return player
+    }
+
+    def params = facebookService.fetchFacebookData(facebookToken)
+    params.token = facebookToken
 
     params = validateParams(params)
 
-    def player = Player.findByFacebookId(params.id) ?:
-      new Player(facebookId: params.id,
+    player = new Player(facebookId: params.id,
               name: params.name,
               gender: params.gender,
               location: params.location.name,
