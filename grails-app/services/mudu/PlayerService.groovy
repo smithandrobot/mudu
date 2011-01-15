@@ -1,7 +1,9 @@
 package mudu
 
+
 import java.text.DateFormat
 import java.text.SimpleDateFormat
+
 
 class PlayerService {
 
@@ -17,9 +19,9 @@ class PlayerService {
       achievements.push(achievement)
     }
     def player = [
-            facebookId    : p.facebookId,
-            name          : p.name,
-            achievements  : achievements
+            facebookId: p.facebookId,
+            name: p.name,
+            achievements: achievements
     ]
 
     return player
@@ -31,33 +33,35 @@ class PlayerService {
 
     def player = Player.findByFacebookId(params.id) ?:
       new Player(facebookId: params.id,
-              name          : params.name,
-              gender        : params.gender,
-              location      : params.location,
-              facebookToken : params.token,
-              birthdate     : params.birthdate).save(failOnError: true)
+              name: params.name,
+              gender: params.gender,
+              location: params.location.name,
+              facebookToken: params.token,
+              birthdate: params.birthdate).save(failOnError: true)
 
     return player
   }
+
+
 
   public Date parseDate(String dateString) {
     DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
     return df.parse(dateString);
   }
 
-  public Object validateParams(Object params){
+  public Object validateParams(Object params) {
 
-    if(params.id == null){
+    if (params.id == null) {
       throw new Error("Missing parameter: facebookId")
-    } else if(params.token == null){
+    } else if (params.token == null) {
       throw new Error("Missing parameter: token")
     }
 
-    try{
-      params.birthdate = parseDate(params.birthdate)
-    } catch(java.text.ParseException e){
+    try {
+      params.birthdate = parseDate(params.birthday)
+    } catch (java.text.ParseException e) {
       params.birthdate = null
-    } catch(java.lang.NullPointerException e){
+    } catch (java.lang.NullPointerException e) {
       params.birthdate = null
     }
 
