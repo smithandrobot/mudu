@@ -2,7 +2,7 @@ package mudu
 
 import grails.test.*
 
-class PlayerTests extends GrailsUnitTestCase {
+class PlayerNetworkTests extends GrailsUnitTestCase {
     protected void setUp() {
         super.setUp()
     }

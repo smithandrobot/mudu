@@ -59,4 +59,15 @@ class PlayerRestControllerTests extends GroovyTestCase {
     assertEquals prc.params.token, createdPlayer.facebookToken
     assertEquals null, createdPlayer.birthdate
   }
+
+  void testFriendsAdded() {
+    new Player(facebookId: "562363085", name:"No name", facebookToken: "444r4r4rr4r4").save()
+    new Player(facebookId: "500042807", name:"No name", facebookToken: "444r4r4rr4ffr4").save()
+    prc.create()
+    def resp = JSON.parse(prc.response.contentAsString)
+    assertEquals "ok", resp.stat
+    def createdPlayer = Player.findByFacebookToken(prc.params.token)
+
+    assertEquals 2, createdPlayer.friends.size()
+  }
 }

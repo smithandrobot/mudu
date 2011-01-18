@@ -2,6 +2,8 @@ package mudu
 
 class Network {
 
-    static constraints = {
-    }
+  static hasMany = PlayerNetwork
+  String name
+  static constraints = {
+  }
 }

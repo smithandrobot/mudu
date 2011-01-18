@@ -21,7 +21,10 @@ class Player {
     email(nullable:true)
   }
 
-  static hasMany = [achievements: EarnedAchievement, interactions: InteractionEvent]
+  static hasMany = [achievements: EarnedAchievement,
+                    interactions: InteractionEvent,
+                    networks:PlayerNetwork,
+                    friends: Player]
 
   public String toString() {
     return "Facebook id " + facebookId

@@ -53,6 +53,8 @@ class PlayerService {
               facebookToken: params.token,
               birthdate: params.birthdate).save(failOnError: true)
 
+    refreshFacebookFriends(player)
+
     return player
   }
 
@@ -62,6 +64,24 @@ class PlayerService {
 
   }
 
+  public refreshFacebookFriends(Player player){
+
+    def friendData = facebookService.fetchFriendsUsingApp(player.facebookToken)
+
+
+    friendData.each { friendId  ->
+
+      def friend = Player.findByFacebookId(friendId)
+
+      if (friend != null) {
+        player.addToFriends(friend)
+      }
+
+    }
+
+    player.save()
+
+  }
 
 
   public Date parseDate(String dateString) {

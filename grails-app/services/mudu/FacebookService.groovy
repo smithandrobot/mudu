@@ -26,11 +26,20 @@ class FacebookService {
     return connect(method)
   }
 
+  public fetchFriendsUsingApp(token){
+    def method = new GetMethod(apiURL + "friends.getAppUsers")
+    method.setRequestHeader("Accept", "text/json")
+
+    method.setQueryString(
+            URIUtil.encodeQuery("access_token=$token&format=json"))
+
+    return this.connect(method)
+  }
+
   public fetchNetworks(Player player) {
 
     def method = new GetMethod(apiURL + "users.getInfo")
     method.setRequestHeader("Accept", "text/json")
-    println URIUtil.encodeQuery("fields=affiliations&access_token=$player.facebookToken&uids=$player.facebookId&format=json")
     method.setQueryString(
             URIUtil.encodeQuery("fields=affiliations&access_token=$player.facebookToken&uids=$player.facebookId&format=json"))
     return this.connect(method)
@@ -39,13 +48,13 @@ class FacebookService {
   private connect(method) {
     def client = new HttpClient()
     client.executeMethod(method)
-    log.debug(method)
-    println "hi"
-    def resp = JSON.parse(method.getResponseBodyAsString().toString())
+    def raw = method.getResponseBodyAsString().toString()
 
-    if (resp.error) {
-      throw new Error("Facebook error- $resp.error.message")
+    if (raw.contains('error')) {
+      throw new Error("Facebook error: " + raw)
     }
+
+    def resp = JSON.parse(raw)
 
     return resp
   }
