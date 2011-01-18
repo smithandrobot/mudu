@@ -36,6 +36,7 @@ class PlayerRestController extends RestController {
       def p = playerService.getOrCreatePlayer(params.token)
       render success(playerService.createPlayerResponseObject(p))
     } catch (Error e) {
+      log.error(e)
       render error(e.message)
     }
 

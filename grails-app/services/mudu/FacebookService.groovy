@@ -1,9 +1,9 @@
 package mudu
 
+import grails.converters.JSON
 import org.apache.commons.httpclient.HttpClient
 import org.apache.commons.httpclient.methods.GetMethod
 import org.apache.commons.httpclient.util.URIUtil
-import grails.converters.JSON
 
 class FacebookService {
 
@@ -14,23 +14,40 @@ class FacebookService {
 
   public fetchFacebookData(token) {
 
-    if (token == null){
+    if (token == null) {
       throw new Error("Token not provided.")
     }
-    def client = new HttpClient()
+
     def method = new GetMethod(graphURL)
 
     method.setRequestHeader("Accept", "text/json")
-    method.setQueryString(URIUtil.encodeQuery("fields=id,name,birthday,gender,location&access_token=$token"))
-    client.executeMethod(method)
+    method.setQueryString(
+            URIUtil.encodeQuery("fields=id,name,birthday,gender,location,email&access_token=$token"))
+    return connect(method)
+  }
 
+  public fetchNetworks(Player player) {
+
+    def method = new GetMethod(apiURL + "users.getInfo")
+    method.setRequestHeader("Accept", "text/json")
+    println URIUtil.encodeQuery("fields=affiliations&access_token=$player.facebookToken&uids=$player.facebookId&format=json")
+    method.setQueryString(
+            URIUtil.encodeQuery("fields=affiliations&access_token=$player.facebookToken&uids=$player.facebookId&format=json"))
+    return this.connect(method)
+  }
+
+  private connect(method) {
+    def client = new HttpClient()
+    client.executeMethod(method)
+    log.debug(method)
+    println "hi"
     def resp = JSON.parse(method.getResponseBodyAsString().toString())
 
-    if(resp.error){
+    if (resp.error) {
       throw new Error("Facebook error- $resp.error.message")
     }
 
-    return  resp
+    return resp
   }
 
 }

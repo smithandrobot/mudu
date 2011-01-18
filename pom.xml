@@ -228,10 +228,9 @@
         <!-- Production database -->
 
         <dependency>
-            <groupId>ca.grimoire.postgresql</groupId>
+            <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>8.4-702</version>
-            <classifier>with-inet</classifier>
+            <version>9.0-801.jdbc4</version>
         </dependency>
 
         <!-- Use Log4J for logging. This artifact also pulls in the Log4J JAR. -->
@@ -280,8 +279,6 @@
         </dependency>
 
 
-
-
     </dependencies>
 
     <dependencyManagement>
@@ -295,13 +292,6 @@
         </dependencies>
     </dependencyManagement>
 
-    <distributionManagement>
-        <site>
-            <id>mudu</id>
-            <name>Production Server</name>
-            <url>scp://muduapp.srsc.us/root</url>
-        </site>
-    </distributionManagement>
 
     <repositories>
         <!-- Required to get hold of javassist:javassist -->

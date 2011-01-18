@@ -10,7 +10,7 @@ class PlayerRestControllerTests extends GroovyTestCase {
 
   protected void setUp() {
     prc.playerService = playerService
-    prc.params.token = "131296520253246|ae1d4f5df91267a5b300f34b-100000241798640|rr1QmKnUcRZ4RnDMBzVI0xnRfbk"
+    prc.params.token = "131296520253246|86b72838825d11a5b55a4278-500041832|jhsy_zm2Gggp2dbmGX_Hrv0aAE4"
     //prc.params.id = "12345"
     super.setUp()
   }
@@ -23,8 +23,8 @@ class PlayerRestControllerTests extends GroovyTestCase {
     prc.create()
     def resp = JSON.parse(prc.response.contentAsString)
     assertEquals "ok", resp.stat
-    assertEquals "100000241798640", resp.data.facebookId
-    assertEquals "Mud Uni", resp.data.name
+    assertEquals "500041832", resp.data.facebookId
+    assertEquals "Tommy Klumker", resp.data.name
 
 
   }
@@ -54,8 +54,9 @@ class PlayerRestControllerTests extends GroovyTestCase {
     assertEquals resp.stat, "ok"
     assertEquals "male", createdPlayer.gender
     assertEquals "Austin, Texas", createdPlayer.location
-    assertEquals "Mud Uni", createdPlayer.name
+    assertEquals "Tommy Klumker", createdPlayer.name
+    assertEquals "tommy.klumker@gmail.com", createdPlayer.email
     assertEquals prc.params.token, createdPlayer.facebookToken
-    assertEquals new Date(77, 7, 03), createdPlayer.birthdate
+    assertEquals null, createdPlayer.birthdate
   }
 }

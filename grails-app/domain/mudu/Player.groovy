@@ -7,6 +7,7 @@ class Player {
   String name
   String gender
   String location
+  String email
   Date birthdate
   Date dateCreated = new Date()
 
@@ -17,6 +18,7 @@ class Player {
     location(nullable:true)
     facebookId(unique:true)
     facebookToken(unique:true)
+    email(nullable:true)
   }
 
   static hasMany = [achievements: EarnedAchievement, interactions: InteractionEvent]

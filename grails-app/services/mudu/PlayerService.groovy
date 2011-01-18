@@ -47,12 +47,19 @@ class PlayerService {
 
     player = new Player(facebookId: params.id,
               name: params.name,
+              email: params.email,
               gender: params.gender,
-              location: params.location.name,
+              location: params.location,
               facebookToken: params.token,
               birthdate: params.birthdate).save(failOnError: true)
 
     return player
+  }
+
+  public storeFacebookNetworks(Player player){
+
+    def networkData = facebookService.fetchNetworks(player)
+
   }
 
 
@@ -76,6 +83,10 @@ class PlayerService {
       params.birthdate = null
     } catch (java.lang.NullPointerException e) {
       params.birthdate = null
+    }
+
+    if(params.location != null){
+      params.location = params.location.name
     }
 
     return params
