@@ -1,0 +1,67 @@
+/* styles */
+
+html{color:#000;background:none;}
+
+body {
+    background: #fff;
+	font-family: "Rockwell", "Rockwell Std", Arial, sans;
+}
+
+h1,h2,h3,h4,h5 {  font-weight:600; margin-bottom:3px;line-height:1.2em;}
+
+em {
+    font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
+#header {
+	overflow: hidden;
+	width:520px;
+	height: 280px;
+	background: url("../images/app_tab/mud_u_tab_header.jpg") no-repeat;
+}
+
+#header h1 {
+	display: none;
+}
+
+#header a {
+	display: inline-block;
+	margin: 180px 0px 0px 264px;
+	width: 266px;
+	height: 111px;
+	text-indent: -10000px;
+	background: url("../images/app_tab/mud_now_button.png") no-repeat;
+}
+
+#header a:hover {
+	margin-top: 179px;
+}
+
+#header a:active {
+	margin-top: 181px;
+}
+
+#promo {
+	width:520px;
+	height: 140px;
+	background: url("../images/app_tab/sweeps_bg.jpg") no-repeat;
+}
+
+#hosted_promo {
+	border:none;
+	margin:0px 0px 0px 10px;
+}
+
+#leaderlist {
+	width: 500px;
+	height: 350px;
+	overflow: auto;
+}
+
+.mudlist, .mudlisthead {
+	width: 100%;
+}
