@@ -47,33 +47,31 @@ strong {
 	background: url("../images/app_tab/mud_now_button.png") no-repeat;
 }
 
-.tab-all {
+.tab
+{
 	position: absolute;
 	display: inline-block;
-	width: 202px;
-	height: 100px;
 	text-indent: -10000px;
+}
+
+#allTimeLeadersTab
+{
+	width: 202px;
+	height: 76px;
 	background: url("../images/app_tab/tab-all.png") no-repeat;
 }
 
-.tab-week {
-	position: absolute;
-	left: 200px;
-	display: inline-block;
+#thisWeeksLeadersTab
+{
 	width: 230px;
 	height: 76px;
-	text-indent: -10000px;
+	left: 200px;
 	background: url("../images/app_tab/tab-week.png") no-repeat;
 	background-position: 0px 10px;
 }
 
-.tab-week:hover {
-	background-position: 0px 0px;
-}
 
-.tab-all:hover {
-	background-position: 0px 0px;
-}
+
 
 #header a:hover {
 	margin-top: 179px;
@@ -114,25 +112,35 @@ strong {
 	margin: 0px 0px 0px 2px;
 }
 
+#this-weeks-list {
+	width: 500px;
+	height: 350px;
+	left:520px;
+	top:545px;
+	overflow: auto;
+	margin: 0px 0px 0px 2px;
+	position:absolute;
+}
+
 #mudlisthead {
 	height: 50px;
 	margin: 0px 0px 0px 2px;
 }
 
-#mudlist, #mudlisthead {
+.mudlist, #mudlisthead {
 	width: 490px;
 }
 
-#mudlist tr {
+.mudlist tr {
 	height: 60px;
 }
 
-#mudlist tr {
+.mudlist tr {
 	background: url("../images/app_tab/tr-divider.png") no-repeat;
 	background-position: center center;
 }
 
-#mudlist tr:hover {
+.mudlist tr:hover {
 	background: url("../images/app_tab/tr-hover.png") no-repeat;
 	background-position: center center;
 }
