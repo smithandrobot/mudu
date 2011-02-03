@@ -40,7 +40,10 @@ class UrlMappings {
       }
     }
 
-    "/"(view: "/index")
+    "/" {
+      controller = "front"
+    }
+
     "500"(view: '/error')
   }
 }

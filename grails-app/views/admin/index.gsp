@@ -10,7 +10,7 @@
 
 <html>
   <head>
-    <meta name='layout' content='main' />
+    <meta name='layout' content='admin' />
     <title>Mud U Admin</title>
   </head>
   <body>

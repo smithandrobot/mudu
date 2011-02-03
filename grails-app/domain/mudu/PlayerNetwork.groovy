@@ -2,8 +2,12 @@ package mudu
 
 class PlayerNetwork {
 
-    static constraints = {
-    }
+  static constraints = {
+  }
 
-    static belongsTo = [player: Player, network: Network]
+  static belongsTo = [player: Player, network: Network]
+
+  public String toString() {
+    return network.name
+  }
 }
