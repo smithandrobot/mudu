@@ -27,7 +27,7 @@ class UrlMappings {
       controller = "logout"
     }
 
-    "/admin/$controller/$action?/$id?" {
+    /*"/admin/$controller/$action?/$id?" {
       constraints {
         // apply constraints here
       }
@@ -38,7 +38,7 @@ class UrlMappings {
       constraints {
         // apply constraints here
       }
-    }
+    } */
 
     "/" {
       controller = "front"

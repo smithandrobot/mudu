@@ -5,7 +5,7 @@ class Interaction {
   static hasMany = InteractionEvent
   String name
   String description
-  Integer score = 0
+  Integer score = 1
 
 
   static constraints = {

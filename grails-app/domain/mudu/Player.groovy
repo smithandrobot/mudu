@@ -21,6 +21,10 @@ class Player {
     email(nullable:true)
   }
 
+  static mapping = {
+    interactions cache:true
+  }
+
   static hasMany = [achievements: EarnedAchievement,
                     interactions: InteractionEvent,
                     networks:PlayerNetwork,
