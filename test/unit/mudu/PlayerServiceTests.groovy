@@ -8,14 +8,20 @@ class PlayerServiceTests extends GrailsUnitTestCase {
   def playerService
 
   protected void setUp() {
+
+    super.setUp()
+
     params = [
             id: "12345",
             token: "-----_____|||||",
             birthdate: "7/28/1976"
     ]
 
+    mockLogging(PlayerService)
+
     playerService = new PlayerService()
-    super.setUp()
+
+
   }
 
   protected void tearDown() {

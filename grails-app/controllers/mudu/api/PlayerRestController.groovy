@@ -12,7 +12,6 @@ class PlayerRestController extends RestController {
     def players = []
 
     player_list.each {p -> players.push(playerService.createPlayerResponseObject(p))}
-
     render success(players)
   }
 

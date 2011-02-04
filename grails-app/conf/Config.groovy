@@ -1,4 +1,4 @@
-import grails.plugins.springsecurity.SecurityConfigType
+//import grails.plugins.springsecurity.SecurityConfigType
 
 // locations to search for config files that get merged into the main config
 // config files can either be Java properties files or ConfigSlurper scripts
@@ -86,15 +86,7 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
+
+
 }
 
-// Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = 'mudu.auth.SecUser'
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'mudu.auth.SecUserSecRole'
-grails.plugins.springsecurity.authority.className = 'mudu.auth.SecRole'
-
-grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
-grails.plugins.springsecurity.interceptUrlMap = [
-    '/admin/**':          ['ROLE_ADMIN'],
-    '/**':               ['IS_AUTHENTICATED_ANONYMOUSLY']
-]

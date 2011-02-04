@@ -1,9 +1,7 @@
 package mudu
 
-
 import java.text.DateFormat
 import java.text.SimpleDateFormat
-
 
 class PlayerService {
 
@@ -30,13 +28,18 @@ class PlayerService {
 
   public Player getOrCreatePlayer(String facebookToken) {
 
-    if (facebookToken == null){
+    if (facebookToken == null) {
       throw new Error("Missing Parameter facebookToken")
     }
 
     def player = Player.findByFacebookToken(facebookToken)
 
-    if (player != null){
+    if (player != null) {
+
+      // persist any updated data
+      refreshFacebookFriends(player)
+      storeFacebookNetworks(player)
+
       return player
     }
 
@@ -45,31 +48,53 @@ class PlayerService {
 
     params = validateParams(params)
 
-    player = new Player(facebookId: params.id,
-              name: params.name,
-              email: params.email,
-              gender: params.gender,
-              location: params.location,
-              facebookToken: params.token,
-              birthdate: params.birthdate).save(failOnError: true)
+    def existingPlayer = Player.findByFacebookId(params.id)
 
-    refreshFacebookFriends(player)
+    if(existingPlayer != null){
+      existingPlayer.facebookToken = facebookToken
+      existingPlayer.location = params.location
+      existingPlayer.email = params.email
+      existingPlayer.save()
+      refreshFacebookFriends(existingPlayer)
+      storeFacebookNetworks(existingPlayer)
+      return existingPlayer
+    }
 
-    return player
+    def newPlayer =  new Player(facebookId: params.id,
+            name: params.name,
+            email: params.email,
+            gender: params.gender,
+            location: params.location,
+            facebookToken: params.token,
+            birthdate: params.birthdate).save(failOnError: true)
+
+    refreshFacebookFriends(newPlayer)
+    storeFacebookNetworks(newPlayer)
+
+    return newPlayer
   }
 
-  public storeFacebookNetworks(Player player){
+  public storeFacebookNetworks(Player player) {
 
     def networkData = facebookService.fetchNetworks(player)
 
+    networkData.affiliations[0].each { a ->
+      def network = Network.findByName(a.name) ?:
+        new Network(name: a.name).save()
+
+      def pn = PlayerNetwork.findByPlayerAndNetwork(player, network) ?:
+        new PlayerNetwork(player: player, network:network).save()
+
+    }
+
   }
 
-  public refreshFacebookFriends(Player player){
+  public refreshFacebookFriends(Player player) {
 
     def friendData = facebookService.fetchFriendsUsingApp(player.facebookToken)
 
 
-    friendData.each { friendId  ->
+    friendData.each { friendId ->
 
       def friend = Player.findByFacebookId(friendId)
 
@@ -100,14 +125,25 @@ class PlayerService {
     try {
       params.birthdate = parseDate(params.birthday)
     } catch (java.text.ParseException e) {
+      log.error("Unable to parse birthdate for $params.id: $e.message")
       params.birthdate = null
     } catch (java.lang.NullPointerException e) {
+      log.error("Unable to parse birthdate for $params.id: $e.message")
       params.birthdate = null
     }
 
-    if(params.location != null){
+    try {
       params.location = params.location.name
+    } catch (e) {
+      log.error("Unable to store location for $params.id: $e.message")
+      params.location = null
     }
+
+    // handle JSONObjects weird Null constant
+    if (params.location.toString() == 'null') {
+      params.location = null
+    }
+
 
     return params
   }

@@ -2,13 +2,17 @@ package mudu
 
 class InteractionEvent {
 
-    Date dateEarned = new Date()
-    String value
+  Date dateEarned = new Date()
+  String value
 
-    static constraints = {
-    }
+  static constraints = {
+  }
 
-    static belongsTo = [player: Player, interaction: Interaction]
+  static mapping = {
+    interaction cache:true
+  }
+
+  static belongsTo = [player: Player, interaction: Interaction]
 
   public String toString() {
     return interaction.name
