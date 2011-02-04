@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -12,21 +12,25 @@
 		<link rel="stylesheet" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css" type="text/css" />
 		<link rel="stylesheet" href="css/jquery.jscrollpane.css" type="text/css" media="all" />
 		<link rel="stylesheet" href="css/mud_styles.css" type="text/css" media="screen, print" />
-		<script src="js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="js/swfobject.js"></script>
-		
-		<!-- styles needed by jScrollPane -->
-		<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
-		<script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>	
-		
-		<script type="text/javascript" src="js/mudu.js"></script>	
-		
-     	<script type="text/javascript">
-       		var params = { menu: false, scale:"noscale", quality:"high", allowScriptAccess:"always", wmode:"transparent", base:"/swf" };
-       		swfobject.embedSWF("swf/mudu_chart.swf", "trophy", "520", "355", "10.0.0", "swf/expressInstall.swf", {}, params);
-       </script>
+		<script src="js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8">
+</script>
+		<script type="text/javascript" src="js/swfobject.js">
+</script><!-- styles needed by jScrollPane -->
 
+		<script type="text/javascript" src="js/jquery.mousewheel.js">
+</script>
+		<script type="text/javascript" src="js/jquery.jscrollpane.min.js">
+</script>
+		<script type="text/javascript" src="js/mudu.js">
+</script>
 		<script type="text/javascript">
+//<![CDATA[
+			var params = { menu: false, scale:"noscale", quality:"high", allowScriptAccess:"always", wmode:"transparent", base:"/swf" };
+			swfobject.embedSWF("swf/mudu_chart.swf", "trophy", "520", "355", "10.0.0", "swf/expressInstall.swf", {}, params);
+		//]]>
+		</script>
+		<script type="text/javascript">
+//<![CDATA[
 		$(function()
 		{
 			$('#leaderlist').jScrollPane(
@@ -43,9 +47,8 @@
 				}
 			);
 		});
-		</script>
-		
-		<!--[if IE 6]>
+		//]]>
+		</script><!--[if IE 6]>
 		<link href="/static/css/ie6.css" rel="stylesheet" type="text/css" />
 		<script src="/static/js/pngfix.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
@@ -64,10 +67,8 @@
 			<iframe src="blank.html" width="500" height="130" scrolling="no" id="hosted_promo"></iframe>
 		</div>
 		<div id="leaderboard-tabs">
-			<a href="#alltime" id="allTimeLeadersTab" class="tab">All-Time Leaders</a>
-			<a href="#thisweek" id="thisWeeksLeadersTab" class="tab">This Week's Leaders</a>
+			<a href="#alltime" id="allTimeLeadersTab" class="tab" name="allTimeLeadersTab">All-Time Leaders</a> <a href="#thisweek" id="thisWeeksLeadersTab" class="tab" name="thisWeeksLeadersTab">This Week's Leaders</a>
 		</div>
-
 		<div id="leaderboard">
 			<div>
 				<table id="mudlisthead">
@@ -89,533 +90,662 @@
 					</tr>
 				</table>
 			</div>
-			<div id="tables-container">
-			<div id="leaderlist">
-				<table class="mudlist">
-					<tbody>
-<tr>
-							<td class="col-num">
-								1.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Mark Phillip
-							</td>
-							<td title="Dirty Hairy">
-								<div class="col-creature hairy">Dirty Hairy</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">524</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								2.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								<a href="http://facebook.com/user_id=7903980">Erin Young</a>
-							</td>
-							<td title="Dirty Hairy">
-								<div class="col-creature hairy">Dirty Hairy</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">524</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								3.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Anthony 'Ants' Nguyen
-							</td>
-							<td title="Dirty Hairy">
-								<div class="col-creature hairy">Dirty Hairy</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">524</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								4.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Chase Quarterman
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								<div class="col-creature hairy">Dirty Hairy</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">524</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								5.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Courtney Grimsley
-							</td>
-							<td title="Sasplotch">
-								<div class="col-creature sasplotch">Sasplotch</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">524</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								6.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Leslie Brockman Chunta
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								<div class="col-creature hairy">Dirty Hairy</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">24</splat>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								7.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Amelia 'Doty' Bowie
-							</td>
-							<td title="Buck Wild">
-								<div class="col-creature buck">Buck Wild</div>
-							</td>
-							<td class="col-props">
-								<div class="splat">524</div>
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								8.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/29604909/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Andrew Hogan
-							</td>
-							<td class="col-creature walnuts" title="Dr. Walnuts">
-								<div class="col-creature walnuts">Dr. Walnuts</div>
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								9.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Mark Phillip
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								10.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Erin Young
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								11.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Anthony 'Ants' Nguyen
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td  class="col-num">
-								12.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Chase Quarterman
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								13.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Courtney Grimsley
-							</td>
-							<td class="col-creature sasplotch" title="Sasplotch">
-								Sasplotch
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								14.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Leslie Brockman Chunta
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								16.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Amelia 'Doty' Bowie
-							</td>
-							<td class="col-creature buck" title="Buck Wild">
-								Buck Wild
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-					</tbody>
-				</table>
+			<div id="tables-outer-container">
+				<div id="tables-container">
+					<div id="leaderlist">
+						<table class="mudlist">
+							<tbody>
+								<tr>
+									<td class="col-num">
+										1.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=712034">Mark Phillip</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										2.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7903980">Erin Young</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										3.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7905541">Anthony 'Ants' Nguyen</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										4.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7946858">Chase Quarterman</a>
+									</td>
+									<td class="col-creature hairy" title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										5.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=9207274">Courtney Grimsley</a>
+									</td>
+									<td title="Sasplotch">
+										<div class="col-creature sasplotch">
+											Sasplotch
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										6.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16700013">Leslie Brockman Chunta</a>
+									</td>
+									<td class="col-creature hairy" title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											24
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										7.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16709522">Amelia 'Doty' Bowie</a>
+									</td>
+									<td title="Buck Wild">
+										<div class="col-creature buck">
+											Buck Wild
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										8.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/29604909/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=29604909">Andrew Hogan</a>
+									</td>
+									<td class="col-creature walnuts" title="Dr. Walnuts">
+										<div class="col-creature walnuts">
+											Dr. Walnuts
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										9.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=712034">Mark Phillip</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										10.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7903980">Erin Young</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										11.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7905541">Anthony 'Ants' Nguyen</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										12.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7946858">Chase Quarterman</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										13.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=9207274">Courtney Grimsley</a>
+									</td>
+									<td title="Sasplotch">
+										<div class="col-creature sasplotch">
+											Sasplotch
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										14.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16700013">Leslie Brockman Chunta</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										16.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16709522">Amelia 'Doty' Bowie</a>
+									</td>
+									<td title="Buck Wild">
+										<div class="col-creature buck">
+											Buck Wild
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!--  -->
+					<div id="this-weeks-list">
+						<table class="mudlist">
+							<tbody>
+								<tr>
+									<td class="col-num">
+										1.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=712034">Mark Phillip</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										2.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/user_id=7903980">Erin Young</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										3.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7905541">Anthony 'Ants' Nguyen</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										4.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7946858">Chase Quarterman</a>
+									</td>
+									<td class="col-creature hairy" title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										5.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=9207274">Courtney Grimsley</a>
+									</td>
+									<td title="Sasplotch">
+										<div class="col-creature sasplotch">
+											Sasplotch
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										6.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16700013">Leslie Brockman Chunta</a>
+									</td>
+									<td class="col-creature hairy" title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											24
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										7.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16709522">Amelia 'Doty' Bowie</a>
+									</td>
+									<td title="Buck Wild">
+										<div class="col-creature buck">
+											Buck Wild
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										8.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/29604909/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=29604909">Andrew Hogan</a>
+									</td>
+									<td class="col-creature walnuts" title="Dr. Walnuts">
+										<div class="col-creature walnuts">
+											Dr. Walnuts
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										9.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=712034">Mark Phillip</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										10.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										Erin Young
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										11.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7905541">Anthony 'Ants' Nguyen</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										12.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=7946858">Chase Quarterman</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										13.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=9207274">Courtney Grimsley</a>
+									</td>
+									<td title="Sasplotch">
+										<div class="col-creature sasplotch">
+											Sasplotch
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										14.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16700013">Leslie Brockman Chunta</a>
+									</td>
+									<td title="Dirty Hairy">
+										<div class="col-creature hairy">
+											Dirty Hairy
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td class="col-num">
+										16.
+									</td>
+									<td class="col-pic">
+										<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
+									</td>
+									<td class="col-name">
+										<a href="http://facebook.com/profile.php?id=16709522">Amelia 'Doty' Bowie</a>
+									</td>
+									<td title="Buck Wild">
+										<div class="col-creature buck">
+											Buck Wild
+										</div>
+									</td>
+									<td class="col-props">
+										<div class="splat">
+											524
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div><!--  -->
+				</div>
 			</div>
-			<!--  -->
-			<div id="this-weeks-list">
-				<table class="mudlist">
-					<tbody>
-					<tr>
-							<td class="col-num">
-								1.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Mark Phillip -2
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								2.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Erin Young
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								3.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Anthony 'Ants' Nguyen
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								4.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Chase Quarterman
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								5.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Courtney Grimsley
-							</td>
-							<td class="col-creature sasplotch" title="Sasplotch">
-								Sasplotch
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								6.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Leslie Brockman Chunta
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								7.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Amelia 'Doty' Bowie
-							</td>
-							<td class="col-creature buck" title="Buck Wild">
-								Buck Wild
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								8.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/29604909/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Andrew Hogan
-							</td>
-							<td class="col-creature walnuts" title="Dr. Walnuts">
-								Dr. Walnuts
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								9.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/712034/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Mark Phillip
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								10.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7903980/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Erin Young
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								11.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7905541/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Anthony 'Ants' Nguyen
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td  class="col-num">
-								12.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/7946858/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Chase Quarterman
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								13.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/9207274/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Courtney Grimsley
-							</td>
-							<td class="col-creature sasplotch" title="Sasplotch">
-								Sasplotch
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								14.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16700013/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Leslie Brockman Chunta
-							</td>
-							<td class="col-creature hairy" title="Dirty Hairy">
-								Dirty Hairy
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-						<tr>
-							<td class="col-num">
-								16.
-							</td>
-							<td class="col-pic">
-								<img src="http://graph.facebook.com/16709522/picture" width="50" height="50" alt="" />
-							</td>
-							<td class="col-name">
-								Amelia 'Doty' Bowie
-							</td>
-							<td class="col-creature buck" title="Buck Wild">
-								Buck Wild
-							</td>
-							<td class="col-props">
-								524
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<!--  -->
-		</div>
 		</div>
 		<div id="trophy"></div>
+		<script type="text/javascript"> 
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script> 
+		<script type="text/javascript"> 
+		try {
+		var pageTracker = _gat._getTracker("UA-9835910-1");
+		pageTracker._trackPageview();
+		} catch(err) {}</script> 
 	</body>
 </html>

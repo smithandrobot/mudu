@@ -1,6 +1,15 @@
 
 $(document).ready(function() {
 	var c = new Controller();
+	$("tr").click(function(){
+	  	if($(this).find("a").attr("href")) 
+		{
+			window.location=$(this).find("a").attr("href"); return false;
+		}
+		return false;
+	});
+	var startTab = top.location.hash;
+	//alert(startTab);
 });
 
 
@@ -17,16 +26,16 @@ function Controller()
 	
 	allTimeTab.select();
 	
-	$(document).ready(function(){
-			$("tr").click(function(){
-			  	if($(this).find("a").attr("href")) 
-				{
-					window.location=$(this).find("a").attr("href"); return false;
-				}
-				return false;
-			});
-
-		});
+	// $(document).ready(function(){
+	// 		$("tr").click(function(){
+	// 		  	if($(this).find("a").attr("href")) 
+	// 			{
+	// 				window.location=$(this).find("a").attr("href"); return false;
+	// 			}
+	// 			return false;
+	// 		});
+	// 
+	// 	});
 }
 
 function tabSelected(tab)
@@ -60,8 +69,11 @@ function TabDecorator(e)
 	function select()
 	{
 		self.selected = true;
+		var index = (self.id == "allTimeTab") ? 1000 : 1010;
+		element.css('z-index', index);
 		element.css('background-position', '0px 0px');
 		element.css('height', '100px');
+
 		tabSelected(self);
 	}
 	
@@ -78,12 +90,13 @@ function TabDecorator(e)
 	{
 		if(self.selected) return false;
 		select();
+		//top.location.hash = self.id;
 		return false;
 	}
 	
 	function hover(event)
 	{
-		if(!self.selected) element.animate({backgroundPosition: '0px 0px'}, 1000);
+		if(!self.selected) element.css('background-position', '0px 0px');
 	}
 	
 	function mouseOut(event)

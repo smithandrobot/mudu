@@ -50,8 +50,10 @@ strong {
 .tab
 {
 	position: absolute;
+	z-index: 1000;
 	display: inline-block;
 	text-indent: -10000px;
+	outline: none;
 }
 
 #allTimeLeadersTab
@@ -69,9 +71,6 @@ strong {
 	background: url("../images/app_tab/tab-week.png") no-repeat;
 	background-position: 0px 10px;
 }
-
-
-
 
 #header a:hover {
 	margin-top: 179px;
@@ -103,7 +102,17 @@ strong {
 	width: 520px;
 	height: 422px;
 	overflow: hidden;
+	position:relative;
+	z-index:800;
 	background: url("../images/app_tab/list_bg.jpg") no-repeat;
+}
+
+#tables-outer-container
+{
+	width: 500px;
+	height: 422px;
+	overflow: hidden;
+	position:relative;
 }
 
 #leaderlist {
@@ -133,17 +142,14 @@ strong {
 {
 	color: #411F0A;
 	text-decoration : none;
+	outline: none;
 }
 .mudlist tr {
 	height: 60px;
 }
 
-/*.mudlist tr:hover {
-	background: url("../images/app_tab/tr-hover.png") no-repeat;
-	background-position: -10px 0px;
-}*/
-
 .mudlist tr:hover {
+	cursor:pointer;
 	background: url("../images/app_tab/tr-hover.png") no-repeat;
 	background-position: -10px 0px;
 }
@@ -165,8 +171,9 @@ strong {
 }
 
 .col-num {
-	width: 40px;
-	padding:0px 0px 0px 10px;
+	width: 25px;
+	padding:0px 0px 0px 0px;
+	text-align:right;
 }
 
 .col-pic {
@@ -191,6 +198,7 @@ strong {
 .splat
 {
 	padding-top:13px;
+	margin-left:35px;
 	color:#FFF;
 	width:48px;
 	height:37px;
