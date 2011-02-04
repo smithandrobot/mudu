@@ -17,11 +17,16 @@ function Controller()
 	
 	allTimeTab.select();
 	
-	function tabSelected(tab)
-	{
-	// if(tab.id == "allTimeTab") thisWeeksTab.deslect();
-	// if(tab.id == "thisWeeksTab") allTimeTab.deslect();
-	}
+	$(document).ready(function(){
+			$("tr").click(function(){
+			  	if($(this).find("a").attr("href")) 
+				{
+					window.location=$(this).find("a").attr("href"); return false;
+				}
+				return false;
+			});
+
+		});
 }
 
 function tabSelected(tab)
@@ -29,6 +34,9 @@ function tabSelected(tab)
 	//alert(tab.id+" thisWeeksTab: "+thisWeeksTab)
 	if(tab.id == "allTimeTab") thisWeeksTab.deselect();
 	if(tab.id == "thisWeeksTab") allTimeTab.deselect();
+	
+	if(tab.id == "allTimeTab") $('#tables-container').animate({'margin-left':'0px'})
+	if(tab.id == "thisWeeksTab") $('#tables-container').animate({'margin-left':'-518px'})
 }
 
 
@@ -68,13 +76,13 @@ function TabDecorator(e)
 	
 	function click(event)
 	{
-		if(self.selected) return;
-		select()
+		if(self.selected) return false;
+		select();
+		return false;
 	}
 	
 	function hover(event)
 	{
-		//element.css('background-position', '0px 0px');
 		if(!self.selected) element.animate({backgroundPosition: '0px 0px'}, 1000);
 	}
 	
