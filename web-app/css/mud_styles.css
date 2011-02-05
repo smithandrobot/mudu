@@ -50,8 +50,10 @@ strong {
 .tab
 {
 	position: absolute;
+	z-index: 1000;
 	display: inline-block;
 	text-indent: -10000px;
+	outline: none;
 }
 
 #allTimeLeadersTab
@@ -69,9 +71,6 @@ strong {
 	background: url("../images/app_tab/tab-week.png") no-repeat;
 	background-position: 0px 10px;
 }
-
-
-
 
 #header a:hover {
 	margin-top: 179px;
@@ -102,7 +101,18 @@ strong {
 #leaderboard {
 	width: 520px;
 	height: 422px;
+	overflow: hidden;
+	position:relative;
+	z-index:800;
 	background: url("../images/app_tab/list_bg.jpg") no-repeat;
+}
+
+#tables-outer-container
+{
+	width: 500px;
+	height: 422px;
+	overflow: hidden;
+	position:relative;
 }
 
 #leaderlist {
@@ -115,11 +125,8 @@ strong {
 #this-weeks-list {
 	width: 500px;
 	height: 350px;
-	left:520px;
-	top:545px;
 	overflow: auto;
-	margin: 0px 0px 0px 2px;
-	position:absolute;
+	margin: -350px 0px 0px 520px;
 }
 
 #mudlisthead {
@@ -131,18 +138,27 @@ strong {
 	width: 490px;
 }
 
+.mudlist tr a
+{
+	color: #411F0A;
+	text-decoration : none;
+	outline: none;
+}
 .mudlist tr {
 	height: 60px;
 }
 
-.mudlist tr {
-	background: url("../images/app_tab/tr-divider.png") no-repeat;
-	background-position: center center;
+.mudlist tr:hover {
+	cursor:pointer;
+	background: url("../images/app_tab/tr-hover.png") no-repeat;
+	background-position: -10px 0px;
 }
 
-.mudlist tr:hover {
-	background: url("../images/app_tab/tr-hover.png") no-repeat;
-	background-position: center center;
+
+.mudlist td
+{
+	background: url("../images/app_tab/tr-divider.png") no-repeat;
+	background-position: -5px 0px;
 }
 
 #trophy {
@@ -155,7 +171,9 @@ strong {
 }
 
 .col-num {
-	width: 40px;
+	width: 25px;
+	padding:0px 0px 0px 0px;
+	text-align:right;
 }
 
 .col-pic {
@@ -164,39 +182,60 @@ strong {
 
 .col-name {
 	width: 200px;
+
 }
 
 .col-creature {
 	width: 100px;
+	margin-left:25px;
 }
 
 .col-props {
-	background: url("../images/app_tab/prop-splot.png") no-repeat;
-	background-position: center center;
 	text-align: center;
 	color: #fff;
 }
 
+.splat
+{
+	padding-top:13px;
+	margin-left:35px;
+	color:#FFF;
+	width:48px;
+	height:37px;
+	background: url("../images/app_tab/prop-splot.png") no-repeat;
+	background-position: center center;
+}
+
+
 .dirty_hairy {
+
 	text-indent: -10000px;
+	width:50px;
+	height:50px;
 	background: url("../images/app_tab/hairy.png") no-repeat;
 	background-position: center center;
 }
 
 .buck_wild {
 	text-indent: -10000px;
+	width:50px;
+	height:50px;
 	background: url("../images/app_tab/buck.png") no-repeat;
 	background-position: center center;
 }
 
 .dr_walnuts {
 	text-indent: -10000px;
+	width:50px;
+	height:50px;
 	background: url("../images/app_tab/walnuts.png") no-repeat;
 	background-position: center center;
 }
 
 .sasplotch {
 	text-indent: -10000px;
+	width:50px;
+	height:50px;
 	background: url("../images/app_tab/sasplotch.png") no-repeat;
 	background-position: center center;
 }
