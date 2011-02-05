@@ -11,6 +11,8 @@ class Player {
   Date birthdate
   Date dateCreated = new Date()
 
+  def stats
+
   static constraints = {
     name(nullable: true)
     birthdate(nullable:true)
@@ -23,6 +25,7 @@ class Player {
 
   static mapping = {
     interactions cache:true
+    achievements cache:true
   }
 
   static hasMany = [achievements: EarnedAchievement,

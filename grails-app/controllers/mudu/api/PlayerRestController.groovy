@@ -1,12 +1,16 @@
 package mudu.api
 
 import mudu.Player
+import grails.plugin.springcache.annotations.Cacheable
+import grails.plugin.springcache.annotations.CacheFlush
 
 class PlayerRestController extends RestController {
 
   def playerService
   def facebookService
+  def statsService
 
+  @Cacheable("playerCache")
   def index = {
     def player_list = Player.list()
     def players = []
@@ -15,8 +19,11 @@ class PlayerRestController extends RestController {
     render success(players)
   }
 
+  @Cacheable("playerStats")
   def view = {
     def p = Player.findByFacebookId(params.id)
+
+    p.stats = statsService.playerStats(p)
 
     if (!p) {
       render error("Player not found with the Facebook ID: " + params.id)
@@ -29,6 +36,7 @@ class PlayerRestController extends RestController {
 
   }
 
+  @CacheFlush(["playerCache"])
   def create = {
 
     try {

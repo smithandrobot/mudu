@@ -7,7 +7,7 @@ class FrontController {
 
   def statsService
 
-  @Cacheable(cache = "topTenCache")
+  @Cacheable("topTenCache")
   def index = {
      [topTen:statsService.topTen()]
   }

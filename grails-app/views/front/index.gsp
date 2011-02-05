@@ -82,8 +82,8 @@
         <td class="col-name">
           ${rank.player.name}
         </td>
-        <td class="col-creature hairy" title="Dirty Hairy">
-          Dirty Hairy
+        <td class="col-creature ${rank.favoriteWeapon.machine_name}" title="${rank.favoriteWeapon.name}">
+          ${rank.favoriteWeapon.name}
         </td>
         <td class="col-props">
           ${rank.score}

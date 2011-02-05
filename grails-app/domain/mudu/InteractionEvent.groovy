@@ -10,6 +10,7 @@ class InteractionEvent {
 
   static mapping = {
     interaction cache:true
+    player cache:true
   }
 
   static belongsTo = [player: Player, interaction: Interaction]

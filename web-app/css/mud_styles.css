@@ -177,19 +177,19 @@ strong {
 	color: #fff;
 }
 
-.hairy {
+.dirty_hairy {
 	text-indent: -10000px;
 	background: url("../images/app_tab/hairy.png") no-repeat;
 	background-position: center center;
 }
 
-.buck {
+.buck_wild {
 	text-indent: -10000px;
 	background: url("../images/app_tab/buck.png") no-repeat;
 	background-position: center center;
 }
 
-.walnuts {
+.dr_walnuts {
 	text-indent: -10000px;
 	background: url("../images/app_tab/walnuts.png") no-repeat;
 	background-position: center center;
