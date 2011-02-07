@@ -90,7 +90,7 @@ function TabDecorator(e)
 	{
 		if(self.selected) return false;
 		select();
-		//top.location.hash = self.id;
+		top.location.hash = self.id;
 		return false;
 	}
 	
