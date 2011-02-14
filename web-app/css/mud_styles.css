@@ -171,9 +171,8 @@ strong {
 }
 
 .col-num {
-	width: 25px;
-	padding:0px 0px 0px 0px;
-	text-align:right;
+	width: 40px;
+	padding:0px 0px 0px 10px;
 }
 
 .col-pic {
@@ -206,9 +205,7 @@ strong {
 	background-position: center center;
 }
 
-
-.dirty_hairy {
-
+.hairy, .dirty_hairy {
 	text-indent: -10000px;
 	width:50px;
 	height:50px;
@@ -216,7 +213,7 @@ strong {
 	background-position: center center;
 }
 
-.buck_wild {
+.buck, .buck_wild {
 	text-indent: -10000px;
 	width:50px;
 	height:50px;
@@ -224,7 +221,7 @@ strong {
 	background-position: center center;
 }
 
-.dr_walnuts {
+.walnuts, .dr_walnuts {
 	text-indent: -10000px;
 	width:50px;
 	height:50px;
@@ -244,7 +241,7 @@ strong {
 	background: url("../images/app_tab/scroll-handle-sprite.png") no-repeat;
 	background-position: left;
 	width: 28px;
-	height: 62px;	
+	height: 62px;
 }
 
 .jspDrag:hover {
