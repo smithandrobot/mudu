@@ -114,10 +114,10 @@ function FlashEmbedder()
 	
 	function embedFlash()
 	{
-		$('.hairy').each( function(){ embedCharacter('mudpie', $(this)); } );
+		$('.dirty_hairy').each( function(){ embedCharacter('mudpie', $(this)); } );
 		$('.sasplotch').each( function(){ embedCharacter('sasplotch', $(this)); } );
-		$('.buck').each( function(){ embedCharacter('buckwild', $(this)); } );
-		$('.walnuts').each( function(){ embedCharacter('walnuts', $(this)); } );
+		$('.buck_wild').each( function(){ embedCharacter('buckwild', $(this)); } );
+		$('.dr_walnuts').each( function(){ embedCharacter('walnuts', $(this)); } );
 	}
 	
 	
@@ -132,14 +132,7 @@ function FlashEmbedder()
 		element.attr('id', id);
 		swfobject.embedSWF("swf/"+file, id, "50", "50", "10", false, flashvars, params, attributes);
 	}
-	
-	function getClass( type )
-	{
-		if(type == 'mudpie') return 'col-creature  mudpie';
-		if(type == 'sasplotch') return 'col-creature  sasplotch';
-		if(type == 'buckwild') return 'col-creature  buck';
-		if(type == 'walnuts') return 'col-creature  walnuts';	
-	}
+
 	
 	function getFile( type ) 
 	{
