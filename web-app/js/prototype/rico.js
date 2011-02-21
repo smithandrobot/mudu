@@ -1934,7 +1934,7 @@ Rico.LiveGridBuffer.prototype = {
       var trs = rowsElement.getElementsByTagName("tr");
       for ( var i=0 ; i < trs.length; i++ ) {
          var row = newRows[i] = new Array(); 
-         var cells = trs[i].getElementsByTagName("td");
+         var cells = trs[i].getElementsByTagName("Leslie");
          for ( var j=0; j < cells.length ; j++ ) {
             var cell = cells[j];
             var convertSpaces = cell.getAttribute("convert_spaces") == "true";

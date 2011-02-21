@@ -15,6 +15,7 @@ div, tr, th, td, p {
 	font-weight: bold;
 }
 
+
 th {
 	color: white;
 }
@@ -33,6 +34,33 @@ strong {
 	height: 280px;
 	background: url("../images/app_tab/mud_u_tab_header.jpg") no-repeat;
 }
+
+/*
+ header anchors
+*/
+
+#mudu-character
+{
+	display: inline-block;
+	position : absolute;
+	top:0px;
+	left:290px;
+	width : 220px;
+	height : 200px;
+	text-indent : -999px;
+}
+
+#mudu-grill
+{
+	display: inline-block;
+	position : absolute;
+	top:215px;
+	left:130px;
+	width : 110px;
+	height : 45px;
+	text-indent : -999px;
+}
+
 
 #header h1 {
 	display: none;
@@ -138,6 +166,10 @@ strong {
 	width: 490px;
 }
 
+.mudlist table
+{
+	width: 290px;
+}
 .mudlist tr a
 {
 	color: #411F0A;
@@ -179,25 +211,34 @@ strong {
 	width: 60px;
 }
 
-.col-name {
-	width: 200px;
-
+.col-name
+{ 
+	width:215px; 
 }
 
+.col-name div{
+	width: 200px;
+	overflow : hidden;
+}
+
+
 .col-creature {
-	width: 100px;
-	margin-left:25px;
+	width: 95px;
 }
 
 .col-props {
 	text-align: center;
 	color: #fff;
+}	
+
+.col-props-header {
+	text-align: left;
 }
 
 .splat
 {
-	padding-top:13px;
-	margin-left:35px;
+	padding:13px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
 	color:#FFF;
 	width:48px;
 	height:37px;

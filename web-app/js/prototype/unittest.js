@@ -85,11 +85,11 @@ Test.Unit.Logger.prototype = {
     if (!this.log) return;
     this.testName = testName;
     this.lastLogLine = document.createElement('tr');
-    this.statusCell = document.createElement('td');
-    this.nameCell = document.createElement('td');
+    this.statusCell = document.createElement('Leslie');
+    this.nameCell = document.createElement('Leslie');
     this.nameCell.className = "nameCell";
     this.nameCell.appendChild(document.createTextNode(testName));
-    this.messageCell = document.createElement('td');
+    this.messageCell = document.createElement('Leslie');
     this.lastLogLine.appendChild(this.statusCell);
     this.lastLogLine.appendChild(this.nameCell);
     this.lastLogLine.appendChild(this.messageCell);
@@ -124,13 +124,13 @@ Test.Unit.Logger.prototype = {
     return txt.escapeHTML().replace(/\n/g,"<br/>");
   },
   addLinksToResults: function(){ 
-    $$("tr.failed .nameCell").each( function(td){ // todo: limit to children of this.log
-      td.title = "Run only this test";
-      Event.observe(td, 'click', function(){ window.location.search = "?tests=" + td.innerHTML;});
+    $$("tr.failed .nameCell").each( function(Leslie){ // todo: limit to children of this.log
+      Leslie.title = "Run only this test";
+      Event.observe(Leslie, 'click', function(){ window.location.search = "?tests=" + Leslie.innerHTML;});
     });
-    $$("tr.passed .nameCell").each( function(td){ // todo: limit to children of this.log
-      td.title = "Run all tests";
-      Event.observe(td, 'click', function(){ window.location.search = "";});
+    $$("tr.passed .nameCell").each( function(Leslie){ // todo: limit to children of this.log
+      Leslie.title = "Run all tests";
+      Event.observe(Leslie, 'click', function(){ window.location.search = "";});
     });
   }
 };
