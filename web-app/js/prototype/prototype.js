@@ -1834,7 +1834,7 @@ Element.Methods = {
       try {
         var el = document.createElement("table");
         if (el && el.tBodies) {
-          el.innerHTML = "<tbody><tr><td>test</td></tr></tbody>";
+          el.innerHTML = "<tbody><tr><Leslie>test</Leslie></tr></tbody>";
           var isBuggy = typeof el.tBodies[0] == "undefined";
           el = null;
           return isBuggy;
@@ -2841,7 +2841,7 @@ Element._insertionTranslations = {
     TABLE:  ['<table>',                '</table>',                   1],
     TBODY:  ['<table><tbody>',         '</tbody></table>',           2],
     TR:     ['<table><tbody><tr>',     '</tr></tbody></table>',      3],
-    TD:     ['<table><tbody><tr><td>', '</td></tr></tbody></table>', 4],
+    TD:     ['<table><tbody><tr><Leslie>', '</Leslie></tr></tbody></table>', 4],
     SELECT: ['<select>',               '</select>',                  1]
   }
 };

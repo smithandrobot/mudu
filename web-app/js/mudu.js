@@ -4,12 +4,13 @@ $(document).ready(function() {
 	$("tr").click(function(){
 	  	if($(this).find("a").attr("href")) 
 		{
-			window.location=$(this).find("a").attr("href"); return false;
+		//	window.location=$(this).find("a").attr("href"); return false;
 		}
 		return false;
 	});
+	
 	var startTab = top.location.hash;
-	//alert(startTab);
+
 });
 
 
@@ -26,16 +27,8 @@ function Controller()
 	
 	allTimeTab.select();
 	
-	// $(document).ready(function(){
-	// 		$("tr").click(function(){
-	// 		  	if($(this).find("a").attr("href")) 
-	// 			{
-	// 				window.location=$(this).find("a").attr("href"); return false;
-	// 			}
-	// 			return false;
-	// 		});
-	// 
-	// 	});
+	var f = new FlashEmbedder();
+	f.embedFash();
 }
 
 function tabSelected(tab)
@@ -108,3 +101,59 @@ function TabDecorator(e)
 	this.toString = function(){ return "TabDecorator - "+this.id;};
 	return this;
 }
+
+
+function FlashEmbedder()
+{
+	var swfCount = 0;
+	var flashvars = {};
+	var params = {};
+	var attributes = {};
+	
+	params.wmode 	= "transparent";
+	this.embedFash 	= embedFlash;
+	
+	function embedFlash()
+	{
+		$('.hairy').each( function(){ embedCharacter('mudpie', $(this)); } );
+		$('.sasplotch').each( function(){ embedCharacter('sasplotch', $(this)); } );
+		$('.buck').each( function(){ embedCharacter('buckwild', $(this)); } );
+		$('.walnuts').each( function(){ embedCharacter('walnuts', $(this)); } );
+	}
+	
+	
+	function embedCharacter( type , element )
+	{
+		++swfCount;
+		var ac  	 	 	= 'col-creature'; // getClass( type );
+		var file 		 	= getFile( type );
+		var id			 	= 'creature-'+swfCount;
+		var a 			 	= {};
+		//attributes['class']	= ac;
+		element.attr('id', id);
+		swfobject.embedSWF("swf/"+file, id, "50", "50", "10", false, flashvars, params, attributes);
+	}
+	
+	function getClass( type )
+	{
+		if(type == 'mudpie') return 'col-creature  mudpie';
+		if(type == 'sasplotch') return 'col-creature  sasplotch';
+		if(type == 'buckwild') return 'col-creature  buck';
+		if(type == 'walnuts') return 'col-creature  walnuts';	
+	}
+	
+	function getFile( type ) 
+	{
+		if(type == 'mudpie') return 'leaderboard_mudpie.swf';
+		if(type == 'sasplotch') return 'leaderboard_sasplotch.swf';
+		if(type == 'buckwild') return 'leaderboard_buckwild.swf';
+		if(type == 'walnuts') return 'leaderboard_walnuts.swf';
+	}
+}
+
+
+
+
+
+
+
