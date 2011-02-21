@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$("tr").click(function(){
 	  	if($(this).find("a").attr("href"))
 		{
-			window.location=$(this).find("a").attr("href"); return false;
+			window.open($(this).find("a").attr("href"), 'fbprofile'); return false;
 		}
 		return false;
 	});

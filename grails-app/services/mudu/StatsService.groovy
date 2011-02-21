@@ -129,7 +129,8 @@ class StatsService {
             mudvites: vites,
             photosShared: shared,
             mudprops: mudded+shared+vites,
-            friendsData: friendsRanks.size() > 2 ? friendsRanks[0..2] : friendsRanks,
+            //friendsData: friendsRanks.size() > 2 ? friendsRanks[0..2] : friendsRanks,
+            friendsData: friendsRanks,
             weekRank: playerRank(player, cal.getTime())
     ]
 

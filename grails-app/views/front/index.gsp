@@ -34,14 +34,14 @@
   </g:javascript>
 </head>
 <body id="mud_u">
-<!-- <img src="http://twitpic.com/show/large/1fdn1r.jpg" /> -->
+
 <div id="header">
   <h1>
     Find It. Mud it. Share it.
   </h1><a href="#" title="All-Time Leaders">Mud Photo Now</a>
 </div>
 <div id="promo">
-  <iframe src="blank.html" width="500" height="130" scrolling="no" id="hosted_promo"></iframe>
+  <iframe src="http://test.csaper.dev.tocquigny.com/mobilyslider-1" width="500" height="130" scrolling="no" id="hosted_promo"></iframe>
 </div>
 <div id="leaderboard-tabs">
   <a href="#alltime" id="allTimeLeadersTab" class="tab" title="All Time Leaders" name="allTimeLeadersTab">All-Time Leaders</a> <a href="#thisweek" id="thisWeeksLeadersTab" class="tab" title="This Week's Leaders" name="thisWeeksLeadersTab">This Week's Leaders</a>
@@ -79,7 +79,9 @@
                 ${counter}.
               </td>
               <td class="col-pic">
-                <img src="http://graph.facebook.com/${rank.player.facebookId}/picture" width="50" height="50" alt=""/>
+                <a href="http://www.facebook.com/profile.php?id=${rank.player.facebookId}" target="_top">
+                    <img src="http://graph.facebook.com/${rank.player.facebookId}/picture" width="50" height="50" alt=""/>
+                </a>
               </td>
               <td class="col-name">
                 ${rank.player.name}
@@ -113,7 +115,9 @@
                 ${counter}.
               </td>
               <td class="col-pic">
-                <img src="http://graph.facebook.com/${rank.player.facebookId}/picture" width="50" height="50" alt=""/>
+                <a href="http://www.facebook.com/profile.php?id=${rank.player.facebookId}" target="_top">
+                    <img src="http://graph.facebook.com/${rank.player.facebookId}/picture" width="50" height="50" alt=""/>
+                </a>
               </td>
               <td class="col-name">
                 ${rank.player.name}
