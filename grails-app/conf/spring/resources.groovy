@@ -2,7 +2,7 @@ import org.springframework.cache.ehcache.EhCacheFactoryBean
 
 // Place your Spring DSL code here
 beans = {
-  statsCache(EhCacheFactoryBean) { bean ->
+ /** statsCache(EhCacheFactoryBean) { bean ->
     cacheManager = ref("springcacheCacheManager")
     cacheName = "topTenCache"
     // these are just examples of properties you could set
@@ -10,5 +10,5 @@ beans = {
     diskPersistent = false
     timeToLive = 15
     memoryStoreEvictionPolicy = "LRU"
-  }
+  } **/
 }

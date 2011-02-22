@@ -16,10 +16,7 @@
             diskPersistent="false"
             />
 
-    <cache name="Book"
-           maxElementsInMemory="10000"
-           timeToIdleSeconds="300"
-            />
+
 
     <cache name="org.hibernate.cache.UpdateTimestampsCache"
            maxElementsInMemory="10000"

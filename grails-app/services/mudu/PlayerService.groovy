@@ -10,6 +10,7 @@ class PlayerService {
 
   def createPlayerResponseObject(Player p) {
     def achievements = []
+
     p.achievements.each {a ->
       def achievement = [
               dateEarned: a.dateEarned,
@@ -20,7 +21,8 @@ class PlayerService {
     def player = [
             facebookId: p.facebookId,
             name: p.name,
-            achievements: achievements
+            achievements: achievements,
+            stats:p.stats
     ]
 
     return player
