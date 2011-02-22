@@ -1,0 +1,69 @@
+<script type="text/javascript"><!--
+	function submitAjaxForm() 
+	{ 		
+		var ajax = new Ajax(); 
+		ajax.responseType = Ajax.FBML;
+		ajax.requireLogin=false;
+		ajax.ondone = function(data) 
+		{ 
+			document.getElementById('container').setInnerFBML(data);
+		}
+		ajax.onerror = function() 
+		{
+			var msgdialog = new Dialog();
+			msgdialog.showMessage("Error", "An error has occurred while talking to the server.");
+		}
+
+		document.getElementById('container').setInnerXHTML("Loading, please wait...");
+		ajax.post('http://smithandrobot.com/df/mudev/tab/interface.php');
+		
+		return false;
+	}
+</script>
+<style type="text/css" media="screen">
+	#container
+	{ 
+		width:520px; 
+		height:1280px;
+		background-image:url('http://c374997.r97.cf2.rackcdn.com/tab_initial_state.jpg');
+	}
+	
+	#app
+	{
+		display: inline-block;
+		position : absolute;
+		top:0px;
+		left:0px;
+		width : 520px;
+		height : 280px;
+		text-indent:-9999px;
+	}
+	
+	#leaderboard
+	{
+		display: inline-block;
+		position : absolute;
+		top:496px;
+		left:0px;
+		width : 520px;
+		height : 420px;
+		text-indent:-9999px;
+	}
+	
+	#chart
+	{
+		display: inline-block;
+		position : absolute;
+		top:922px;
+		left:0px;
+		width : 520px;
+		height : 357px;
+		text-indent:-9999px;
+	}
+</style>
+
+ <div id="container">
+ 	<a id="app" href="http://apps.facebook.com/muduapp/">Mud A Photo Now!</a>
+ 	<a id="leaderboard" href="#leaderboard" onclick="submitAjaxForm();return false;">Who muds most. Click to see which facebook users are in the leaderboard.</a>
+ 	<a id="chart" href="#statistics" onclick="submitAjaxForm(); return false;">Click to load statistics.</a>
+ </div>
