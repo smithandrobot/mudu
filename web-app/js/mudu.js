@@ -1,4 +1,18 @@
+// Facebook
 
+window.fbAsyncInit = function() 
+{
+		FB.Canvas.setSize( {height:1625} );
+	  	FB.init({
+	    appId  : '145222938875101',
+	    status : true,
+	    cookie : true,
+	    xfbml  : true 
+	  	});           
+
+};
+
+// Leaderboard
 $(document).ready(function() {
 	var c = new Controller();
 	$("tr").click(function(){
@@ -6,11 +20,10 @@ $(document).ready(function() {
 		{
             window.open($(this).find("a").attr("href"), 'fbprofile'); return false;
 		}
-		return false;
+		
 	});
 	
 	var startTab = top.location.hash;
-
 });
 
 
