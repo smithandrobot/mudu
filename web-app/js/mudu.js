@@ -12,7 +12,6 @@ $(document).ready(function() {
 		
 	});
 	
-	var startTab = top.location.hash;
 });
 
 
