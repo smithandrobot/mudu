@@ -1,16 +1,3 @@
-// Facebook
-
-window.fbAsyncInit = function() 
-{
-		FB.Canvas.setSize( {height:1625} );
-	  	FB.init({
-	    appId  : '145222938875101',
-	    status : true,
-	    cookie : true,
-	    xfbml  : true 
-	  	});           
-
-};
 
 
 
